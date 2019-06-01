@@ -20,6 +20,9 @@ class TarefasPage
         find('#task-board h3')
     end
 
+
+
+    #apreedndo a subir pro git
     private
 
     def insere_tags(tags)
