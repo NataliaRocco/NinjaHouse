@@ -1,0 +1,93 @@
+Produto: gerenciamento de tarefas (mark7)
+
+Sprint1: (Login)
+
+Historio do usuario
+	Para que eu possa cadastrar e gerenciar minhas atividades
+	Sendo um usuario cadastrado
+	Posso acessar o sistema com meu email e minha senha
+	
+	DDT (Data Driven Testing) => Teste Guiado por Dados é entrada e saida de dados
+    
+    Esquema do Cenário: Definição do cenário(quando tem um unico cenario com mesmo comportamento com variação de dados )
+     Placeholders => os valores quer serão substituidos
+     matriz de exemplo => massa de dados/teste
+	 
+	descrição do PO:
+	Quando o usuario preencher o formulario de login, 
+	e submete-lo,o mesmo deve ser autenticado e ser redirecionado para o painel de tarefas
+	
+	Gerkin para escrever testes =. BTD(Teste Guiado por Comportamento)
+	3
+	BDD(behavior driven development) => Desenvolvimento guiado por comportamento
+	
+	Dado => é a preparação
+	Quando => é a ação do cenario
+	Então => verificação
+	
+	Cenario: Usuario é autenticado(nao é BDD,pois esta violando o violando a  sintaxe gerckin e a estrutura do cucumber,
+	pois preencher o campo no email e senha eles sao a "Ação do cenario" e nao a "Preparação" 
+	e tambem eh um caso de teste tradicional reescrito em BDD) 
+	
+	
+	Dado que eu acesso a pagina de login
+	E eu preencho o campo email com "natalia.rocco@hotmail.com"
+	E Eu preencho o campo senha com "123456"
+	Quando eu clico em Entrar
+	Então sou autenticado com sucesso
+	
+	
+	Cenario: usuario Autenticado
+	
+	Dado que estou na pagina de login
+	Quando faço login com "natalia.rocco@hotmail" e "123456"
+	Então devo ver a mensagem "Ola Natalia"
+	
+	Cenario: Senha incorreta
+	
+		Dado que estou na página de login
+		Quando eu faço login com senha incorreta
+		Então devo a seguinte mensagem de alerta "Senha inválida."
+		
+	Cenario: Email incorreto 
+	
+		Dado que estou na página de login
+		Quando eu faço login com email incorreto
+		Então devo a seguinte mensagem de alerta "Email inválido."
+	
+	Cenario:Email não informado
+	
+		Dado que estou na página de login
+		Quando eu faço login sem informar o email
+		Então devo a seguinte mensagem de alerta "Email deve ser prenchido."
+		
+	Cenario:Senha não informada
+	
+		Dado que estou na página de login
+		Quando eu faço login sem informar a senha
+		Então devo a seguinte mensagem de alerta "Senha deve ser prenchida."
+	
+	Cenario: Usuario não existe
+	
+		Dado que estou na página de login
+		Quando eu faço login com usuario não cadastrado
+		Então devo a seguinte mensagem de alerta "Usuario não cadastrado."
+		
+		
+		
+		Estoria: Atualização cadastral
+		
+		Sendo um usário com cadastro incompleto
+		Posso completar o meu cadastro
+		Para manter minha informações atualizadas
+		
+		Estoria: Cadastar tarefas
+		
+		Sendo um usário cadastrado
+		Posso cadastrar novas tarefas
+		Para manter minhas atividades organizadas
+-----------------------------------------------------------------------------------------------------------------------------
+ # sleep para esperar um elemento => nao é bom
+ # sleep => Think time (simula o tempo do usuario "pensando", ou um time de resposta do backend)
+ # quando o sleep fica ocilando coloca o tempo de sleep máximo, ou entao utiliza um metodo q o capybara disponibiliza no arquivo env.rb
+ # config.default_max_wait_time = 10 (esse valor avi ser padrão pra procurar todos os elementos)
