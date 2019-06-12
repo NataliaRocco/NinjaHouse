@@ -12,7 +12,7 @@ end
 
 Quando('eu faço o cadastro desta tarefa') do
   @page.tarefas.botao_novo
-  @page.tarefas.nova (@nova_tarefa)
+  @page.tarefas.nova(@nova_tarefa)
 end
 
 Então('devo este cadastro na lista com o status {string}') do |status_tarefa|
