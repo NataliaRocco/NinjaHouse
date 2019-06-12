@@ -4,7 +4,7 @@ class TarefasPage
 
     def nova(tarefa)
         within('#add-task')do # so vai procura esse campos dentro deese id #add_task deixando o cidigo mais robusto
-            fill_in'title', with: tarefa[:nova]
+            fill_in'title', with: tarefa[:nome]
             fill_in'dueDate', with: tarefa[:data]
             insere_tags(tarefa[:tags]) # como esta recendo um array pode fazer for each
             click_button 'Cadastrar'
