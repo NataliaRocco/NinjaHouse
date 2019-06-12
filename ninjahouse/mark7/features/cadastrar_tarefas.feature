@@ -9,7 +9,7 @@ Funcionalidade: Cadastrar tarefas
     Cenario: Nova tarefa
 
         Dado que "Estudar Ruby" é a minha nova tarefa
-        E devo finalizar esta tarefa até "01/01/2019"
+        E devo finalizar esta tarefa até "01/11/2019"
         E além disso quero taquear esta tarefa com:
             | tag        |
             | ruby       |
