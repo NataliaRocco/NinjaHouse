@@ -11,7 +11,6 @@ class TarefasPage
         end
     end
   
-
     def botao_novo
         find('button[id^=insert-button]').click
     end
@@ -20,7 +19,9 @@ class TarefasPage
         find('#task-board h3')
     end
 
-
+    def obter_tr_por_nome(nome)
+        find('table tbody tr', text: nome)
+    end
 
     #apreedndo a subir pro git
     private

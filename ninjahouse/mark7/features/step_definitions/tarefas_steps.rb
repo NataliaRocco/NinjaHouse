@@ -1,6 +1,8 @@
 Dado('que {string} é a minha nova tarefa') do |nova_tarefa|
   @nova_tarefa = {nome: nova_tarefa, data: nil, tags: [] }
+  MarkDb.new.apaga_tarefa(nova_tarefa)
 end
+#aula mongo
 
 Dado("que {string} é a minha nova tarefa dinamica") do |nova_tarefa|
   @nova_tarefa = { 
@@ -24,5 +26,6 @@ Quando('eu faço o cadastro desta tarefa') do
 end
 
 Então('devo este cadastro na lista com o status {string}') do |status_tarefa|
-  expect(page).to have_content status_tarefa
+ res = @page.tarefas.obter_tr_por_nome(@nova_tarefa)
+ expect(res).to have_content status_tarefa
 end

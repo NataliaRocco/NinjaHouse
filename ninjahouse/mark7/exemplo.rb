@@ -1,4 +1,7 @@
 
+#Mostrar todos o erros dos steps numa pagina:
+# cucumber --format html--out=log/report.html
+
 
    # fill_in funciona quando o elemento input possui id ou name
    #valor absloluto
