@@ -18,5 +18,7 @@ end
 After do |scenario|
     nome = scenario.name.gsub(/[^A-Za-z0-9 ]/, '').downcase!
     nome = nome.tr(' ', '_')
-    puts nome
+    screenshot = "log/screenshots/#{nome}.png"
+    page.save_screenshot(screenshot) # => Capaybara tira o Screenshot
+    enbed(screenshot , "image/png","Evidencia") # =>cucumber tira o Screenshot
 end
