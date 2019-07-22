@@ -21,7 +21,7 @@ Funcionalidade: Cadastrar tarefas
         
         
     @login @nova_tarefa_dinamica
-    Cenario: Nova tarefa
+    Cenario: Nova tarefa dinamica
 
         Dado que "Estudar MongoDB" é a minha nova tarefa dinamica
         E devo finalizar esta tarefa até "01/11/2019"
