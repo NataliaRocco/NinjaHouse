@@ -1,0 +1,5 @@
+ ----
+default: -p dot -p html
+bdd: --format pretty #formato padrao 
+dot: --format progress #executa todos os cenarios e cada step representa por um ponto verde e cada falha eh um f vermelho
+html: --format html --out=log/report.html #Mostrar todos o erros dos steps numa pagina de relatorio:
